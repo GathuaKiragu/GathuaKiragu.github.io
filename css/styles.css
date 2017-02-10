@@ -9,12 +9,12 @@ h1{
 	text-align: center;
 	text-decoration: 20px;
 	font-family: Comic Sans MS;
-	text-color: orange;
+	text-decoration: underline;
 }
 
 h2{
 	text-align: center;
-	text-color: blue;
+	color: blue;
 
 }
 img{
