@@ -1,16 +1,28 @@
+.container{
+    width: 1320px;
+    padding: 10px;
+    border: 5px solid gray;
+    margin: 0; 
+}
+}
 h1{
 	text-align: center;
 	text-decoration: 20px;
-
+	font-family: Comic Sans MS;
+	text-color: orange;
 }
 
 h2{
 	text-align: center;
 	text-color: blue;
+
 }
 img{
 	text-align: center;
 }
 body{
 	background-color: #cb96f7;
+}
+p{
+	font-family: Comic Sans MS;
 }
