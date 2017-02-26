@@ -1,28 +1,29 @@
-.container{
-    width: 1320px;
-    padding: 10px;
-    border: 5px solid gray;
-    margin: 0; 
+.navbar-inverse{
+opacity: 0.5;
 }
+.navbar-inverse: hover {
+background-color: yellow;
 }
-h1{
-	text-align: center;
-	text-decoration: 20px;
-	font-family: Comic Sans MS;
-	text-decoration: underline;
+.bckground{
+background-image:url('../images/background.jpg');"
+background-repeat: no-repeat;
+height: auto;
+width: auto;
+background-size: cover;
+font-family: 'Roboto Slab', serif;
 }
 
-h2{
-	text-align: center;
-	color: blue;
-
-}
-img{
-	text-align: center;
-}
-body{
-	background-color: #cb96f7;
-}
 p{
-	font-family: Comic Sans MS;
+font-family: 'Roboto Slab', serif;
+}
+.carousel-content {
+color:white;
+display:flex;
+align-items:center;
+text-shadow: 30px;
+}
+#text-carousel {
+width: 100%;
+height: 500px;
+padding: 100px;
 }
