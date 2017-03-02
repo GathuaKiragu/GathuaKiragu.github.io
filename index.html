@@ -5,28 +5,34 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" media="all">
+		<link rel="stylesheet" href="css/styles.css" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Sirin+Stencil" rel="stylesheet">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-		<link rel="stylesheet" href="css/styles.css" type="text/css">
-		<link rel="stylesheet" href="css/animate.css" type="text/css">
-		<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
-		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	</head>
-	<body>
+	<body class="revealonScroll">
 		<!-- navbar begins here -->
-		<div class="banner" style="background-image:url('images/Custom-made.jpg'); height: 777px";>
-			<nav class="navbar navbar-inverse">
+		<div class="banner" data-animation="lightSpeedIn" style="background-image:url('images/Custom-made.jpg'); height: 800px;";>
+			<nav class="navbar navbar-inverse navbar-fixed-top">
 				<div class="container-fluid">
 					<ul class="nav navbar-nav">
 						<li class="active"><a href="#">Home</a></li>
 						<li><a href="#Education">Education</a></li>
-						<li><a href="#">Projects</a></li>
-						<li><a href="#">About Me</a></li>
-						<li><a href="#">Contacts</a></li>
+						<li><a href="#Projects">Projects</a></li>
+						<li><a href="#About">About Me</a></li>
+						<li><a href="#Contacts">Contacts</a></li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="#"><span class="glyphicon glyphicon-phone"></span> +254701250543</a></li>
-						<li><a href="https://mailto:kiragugathua@gmail.com"><span class="glyphicon glyphicon-envelope"></span> kiragugathua@gmail.com</a></li>
+						<li><a href="https://mailto:kiragugathua@gmail.com"><span class="glyphicon glyphicon-envelope"></span></a></li>
+						<li><a href="https://www.faceBook.com/BrianGathua"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li><a href="https://www.instagram.com/BrianGathua"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+						<li><a href="https://www.githhub.com/gathuakiragu"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+						<li><a href="https://www.Linkedin.com/gathuakiragu"><i class="fa fa-linkedin" aria-hidden="true"></i></li>
 					</ul>
 				</div>
 			</nav>
@@ -69,25 +75,66 @@
 				<a class="right carousel-control" href="#text-carousel" data-slide="next">
 					<span class="glyphicon glyphicon-chevron-right"></span>
 				</a>
-				<a href="#Education" class="explore animated bounceInDown"><i class="fa fa-angle-down  fa-3x"></i></a>
 			</div>
 		</div>
 	</div>
+
+
 	<!-- Education Starts Here -->
-	<div class="bckground wowload fadeInRight" style="visibility: visible; animation-name: fadeInUp;">
-		<div id="Education" class="container-fluid">
+	<div class="edu" style="background-image:url('images/background12.jpg'); width: auto; height: 718px">
+		<div id="Education" data-animation="lightSpeedIn">
 			<ul>
-				<center><h1>EDUCATION</h1></center>
-				<li><p>2015 Institute Of Advance Technology(Certificate ICDL)</p></li>
-				<li><img src="images/p7.jpg" alt="iat-logo"></li>
-				<li><p>2015-2016 Jomo Kenyatta University Of Agriculture And Technology(Diploma In Information Technology</p></li>
-				<li><img src="images/jkuat-logo.png" alt="jkuat-logo"></li>
-				<li><p>2017 Moringa-School(Introduction To programming)</p></li>
-				<li><img src="images/logo-dark.png" alt="Moringa-School-logo"></li>
+				<center><h1 data-animation="animated bounceInDown">EDUCATION</h1></center>
+				<h2><p>2015 Institute Of Advance Technology(Certificate ICDL)</p></h2>
+				<h2><p>2015-2016 Jomo Kenyatta University Of Agriculture And Technology(Diploma In Information Technology</p></h2>
+				<h2>2017 Moringa-School(Introduction To programming</h2>
 			</ul>
-			
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+		
+	
+	<!-- Projects Begin Here -->
+	<div id="Projects" data-animation="slidein" >
+		<center>
+		<h1>Projects</h1>
+		<h2>Anitas kitchen</h2>
+		<a href="https://gathuakiragu.github.io/mpft-ip"><img src="images/project2.png" class="img-thumbnail" width="600px" height="400px" alt="Anitas Kitchen"></a>
+		<h2>PingPong</h2>
+		<a href="https://gathuakiragu.gihub.io/PingPongjs"></a><img src="images/project3.png" class="img-thumbnail" width="600px" height="400px" alt="PingPong">
+		</center>
+	</div>
+	
+</div>
+<!-- Projects End Here -->
+<!-- About Information Begins Here -->
+<div id="About">
+	<div class="jumbotron">
+		<h1>About Me</h1>
+		<p>I'm web designer and front-end developer. I'm interested in all kinds of visual communication, but my major focus is on designing web, mobile and tablet interfaces. I also have skills in other fields like branding, icon design or web development.
+		</p>
+	</div>
+</div>
+<!-- About Information Ends Here -->
+<!-- Contacts section starts here -->
+<div id="Contacts">
+	<div class="footer">
+		<h1>OK, LET’S CREATE<h1>
+		<h2>SOMETHING GREAT<h2>
+		<p>If you like my work and have some cool project to work on, just send me direct message or contact me through social sites listed below.</p><br><br>
+		<div>
+			<a href="https://www.faceBook.com/BrianGathua"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+			<a href="https://www.instagram.com/BrianGathua"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+		<a href="https://www.githhub.com/gathuakiragu"><i class="fa fa-github" aria-hidden="true"></i></div>
+		<a href="https://www.Linkedin.com/gathuakiragu"><i class="fa fa-linkedin" aria-hidden="true"></i>
+			
+		</div>
+		
+	</div>
+	
+	
+</div>
+<!-- Contacts Section Ends Here -->
+<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+<script src="js/scripts.js"></script>
 </body>
 </html>

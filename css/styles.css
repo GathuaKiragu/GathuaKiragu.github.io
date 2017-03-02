@@ -1,21 +1,27 @@
+/*Overall Font style*/
+body{
+font-family: 'Sirin Stencil', cursive;
+}
+/*End of overall font style*/
+/*Navbar Section*/
 .navbar-inverse{
 opacity: 0.5;
 }
-.navbar-inverse: hover {
-background-color: yellow;
-}
+/*End Of Navbar Section*/
+/*Home Section Header*/
 .bckground{
-background-image:url('../images/background.jpg');"
+background-image:url('../images/background.jpg');
 background-repeat: no-repeat;
 height: auto;
 width: auto;
 background-size: cover;
 font-family: 'Roboto Slab', serif;
 }
-
 p{
 font-family: 'Roboto Slab', serif;
 }
+/*End Home Section*/
+/*Slide Show*/
 .carousel-content {
 color:white;
 display:flex;
@@ -25,5 +31,53 @@ text-shadow: 30px;
 #text-carousel {
 width: 100%;
 height: 500px;
-padding: 100px;
+padding-top: 250px;
 }
+/*SlideShow Ends Here*/
+/*Education Starts Here*/
+.edu{
+font-family: 'Sirin Stencil', cursive;
+text-align: center;
+font-size: 32px;
+color: white;
+padding: 80px;
+}
+/*Education Ends here*/
+/*About Starts Here*/
+#About{
+text-align: center;
+padding: 60px;
+margin: 30px 50px 0px 50px;
+}
+#About p{
+padding: 30px;
+}
+/*About Ends Here*/
+#Contacts{
+text-align: center;
+background-color: #FFFFFF;
+width: auto;
+height: auto;
+}
+/*About Ends Here*/
+/*Footer Section*/
+.footer{
+background-image:url('../images/qwerty.jpg');
+opacity: 0.8;
+color: white;
+width: auto;
+height: 400px;
+}
+/*End of Footer*/
+/*Animations*/
+.edu{
+position: relative;
+-webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+-webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+-webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
+animation-name: example;
+animation-duration: 4s;
+animation-delay: 2s;
+}
+
+-webkit-transition-timing-function: ease-in;
