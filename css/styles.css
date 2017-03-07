@@ -64,20 +64,18 @@ height: auto;
 .footer{
 background-image:url('../images/qwerty.jpg');
 opacity: 0.8;
-color: white;
+color: purple;
 width: auto;
-height: 400px;
+height: auto;
+font-size: 24px;
 }
 /*End of Footer*/
 /*Animations*/
 .edu{
 position: relative;
--webkit-animation-name: example; /* Safari 4.0 - 8.0 */
--webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
--webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
-animation-name: example;
-animation-duration: 4s;
-animation-delay: 2s;
 }
-
--webkit-transition-timing-function: ease-in;
+.image:hover {
+color: white;
+opacity: 0.9;
+background-color: purple;
+}

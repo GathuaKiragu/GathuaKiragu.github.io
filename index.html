@@ -78,8 +78,6 @@
 			</div>
 		</div>
 	</div>
-
-
 	<!-- Education Starts Here -->
 	<div class="edu" style="background-image:url('images/background12.jpg'); width: auto; height: 718px">
 		<div id="Education" data-animation="lightSpeedIn">
@@ -89,21 +87,32 @@
 				<h2><p>2015-2016 Jomo Kenyatta University Of Agriculture And Technology(Diploma In Information Technology</p></h2>
 				<h2>2017 Moringa-School(Introduction To programming</h2>
 			</ul>
+			<div><img src="images/logo-dark.png"></div>
+			<br>
+			<div><img src="images/jkuat-logo.png"></div>
 		</div>
 	</div>
-		
 	
 	<!-- Projects Begin Here -->
 	<div id="Projects" data-animation="slidein" >
 		<center>
 		<h1>Projects</h1>
-		<h2>Anitas kitchen</h2>
-		<a href="https://gathuakiragu.github.io/mpft-ip"><img src="images/project2.png" class="img-thumbnail" width="600px" height="400px" alt="Anitas Kitchen"></a>
-		<h2>PingPong</h2>
-		<a href="https://gathuakiragu.gihub.io/PingPongjs"></a><img src="images/project3.png" class="img-thumbnail" width="600px" height="400px" alt="PingPong">
+		<table>
+			<tr>
+				<td><h2>Anitas kitchen</h2></td>
+				<td><h2>PingPong</h2></td>
+				<td><h2>PigDice</h2></td>
+			</tr>
+			<tr>
+				<td><a href="https://gathuakiragu.github.io/mpft-ip"><img src="images/project2.png" class="image img-thumbnail" width="600px" height="400px" alt="Anitas Kitchen"></a></td>
+				
+				<td><a href="https://gathuakiragu.gihub.io/PingPongjs"><img src="images/project3.png" class="image img-thumbnail" width="600px" height="400px" alt="PingPong"></a></td>
+				
+				<td><a href="https://gathuakiragu.gihub.io/PingPongjs"><img src="images/pigdice.png" class="image img-thumbnail" width="600px" height="400px" alt="PigDice"></a></td>
+			</tr>
+		</table>
 		</center>
 	</div>
-	
 </div>
 <!-- Projects End Here -->
 <!-- About Information Begins Here -->
@@ -118,20 +127,27 @@
 <!-- Contacts section starts here -->
 <div id="Contacts">
 	<div class="footer">
-		<h1>OK, LET’S CREATE<h1>
-		<h2>SOMETHING GREAT<h2>
-		<p>If you like my work and have some cool project to work on, just send me direct message or contact me through social sites listed below.</p><br><br>
+		<p>Kindly Contact me Below</p>
+		<img src="images/pic.JPG" class="img-thumbnail" width="150px" height="90px">
 		<div>
-			<a href="https://www.faceBook.com/BrianGathua"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-			<a href="https://www.instagram.com/BrianGathua"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-		<a href="https://www.githhub.com/gathuakiragu"><i class="fa fa-github" aria-hidden="true"></i></div>
-		<a href="https://www.Linkedin.com/gathuakiragu"><i class="fa fa-linkedin" aria-hidden="true"></i>
-			
+			<form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+				<div class="row">
+					<label for="name">Your name:</label><br />
+					<input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+				</div>
+				<div class="row">
+					<label for="email">Your email:</label><br />
+					<input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+				</div>
+				<div class="row">
+					<label for="message">Your message:</label><br />
+					<textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
+				</div>
+				<input id="submit_button" type="submit" value="Send email" />
+			</form>
 		</div>
 		
 	</div>
-	
-	
 </div>
 <!-- Contacts Section Ends Here -->
 <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
