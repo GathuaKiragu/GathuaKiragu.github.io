@@ -1,66 +1,50 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Slab');
-body {
-    margin: 0;
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #777;
+}
+/*Parallax effect*/
+.image1{
+  position: relative;
+  opacity: 0.8;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.image1{
+  background-image: url("http://orig09.deviantart.net/ac64/f/2008/032/4/e/alpha_tech_wallpaper_by_nukeation.jpg");
+  min-height: 100%;
 }
 
-ul.sidenav {
-    font-family: 'Josefin Slab', serif;
-    font-size: 25px;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 25%;
-    background-color: transparent;
-    background: transparent;
-    border-color: transparent;
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-    float: right;
+.content {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-family: 'Poiret One', cursive;
+  color: #a05410;
+  font-size: 40px;
 }
 
-ul.sidenav li a {
-    display: block;
-    color: #8B008B;
-    padding: 8px 16px;
-    text-decoration: none;
+.content span.border {
+  background-color: #111;
+  font-family: 'Poiret One', cursive;
+  color: white;
+  padding: 18px;
+  font-size: 25px;
+  letter-spacing: 10px;
 }
 
-ul.sidenav li a.active {
-    background-color: #e9e9e9;
-    color: white;
-}
-
-ul.sidenav li a:hover:not(.active) {
-    background-color: #e9e9e9;
-    color: #720d96;
-    opacity: 0.4;
-}
-
-div.content {
-    margin-left: 25%;
-    padding: 1px 16px;
-    height: 1000px;
-}
-
-@media screen and (max-width: 1400px) {
-    ul.sidenav {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-    ul.sidenav li a {
-        float: left;
-        padding: 10px;
-    }
-    div.content {
-        margin-left: 0;
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
     }
 }
-
-@media screen and (max-width: 700px) {
-    ul.sidenav li a {
-        text-align: center;
-        float: none;
-    }
-}
+</style>
