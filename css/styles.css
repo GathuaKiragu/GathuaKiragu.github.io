@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Amiri|Poiret+One');
-
 body, html {
     height: 100%;
     margin: 0;
@@ -7,7 +6,7 @@ body, html {
     color: #777;
 }
 
-h1{
+h1 {
     font-family: 'Amiri', serif;
     background-color: #c5af6c;
     color: white;
@@ -15,6 +14,7 @@ h1{
     text-decoration: none;
     display: inline-block;
 }
+
 
 /* Make Navbar Transparent */
 
@@ -65,7 +65,7 @@ h1{
 }
 
 .image1 {
-    background-image: url("http://orig09.deviantart.net/ac64/f/2008/032/4/e/alpha_tech_wallpaper_by_nukeation.jpg");
+    background-image: url("http://www.rafaelcintra.com/wp-content/uploads/2017/01/laptop_room_on_the_desk_keyboard_mouse_apple_window_interior_73963_1920x1080.jpg");
     min-height: 100%;
 }
 

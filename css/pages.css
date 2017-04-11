@@ -5,8 +5,9 @@ body, html {
     font: 400 15px/1.8 "Lato", sans-serif;
     color: #777;
 }
+
 .topnav {
-    background-color: #0BB7CD;
+    background-color: #c5af6c;
     overflow: hidden;
     opacity: 0.6;
 }
@@ -42,12 +43,26 @@ body, html {
 
 
 /*Portofolio*/
-#portofolio{
-  padding: 20px;
-  margin: 10px;
-}
 
-h1{
+
+.portofolio {
+    background-image:url("http://www.newedenschoolofnaturalhealth.org/backgrounds.jpg");
+    position: absolute;
+    padding: 20px;
+    margin: 10px;
+}
+.portofolio a{
+   display: block;
+   background: black;
+   color: #f2f2f2;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;xde
+}
+p{
+  color: black;
+}
+h1 {
     font-family: 'Amiri', serif;
     background-color: #191919;
     color: white;
@@ -55,11 +70,11 @@ h1{
     text-decoration: none;
     display: inline-block;
 }
-h2{
 
+h2 {
     font-family: 'Amiri', serif;
-    color: #0000b2;
-    font-size: 24px;
+    color: #000;
+    font-size: 30px;
     text-align: center;
 }
 
@@ -98,11 +113,45 @@ h2{
     width: 400px;
     height: 400px;
 }
+
+
 /*Portofolio*/
 
+
 /*AboutMe*/
-.items{
-  padding: 20px;
-  margin: 10px;
-  text-align: center;
+
+.items {
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
 }
+
+
+/*Contact form*/
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #0BB7CD;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #69fff5;
+}
+
+
+/*End of contact form*/
