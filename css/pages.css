@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Amiri|Poiret+One');
+body, html {
+    height: 100%;
+    margin: 0;
+    font: 400 15px/1.8 "Lato", sans-serif;
+    color: #777;
+}
 .topnav {
     background-color: #0000b2;
     overflow: hidden;
@@ -50,11 +56,10 @@ h1{
 h2{
 
     font-family: 'Amiri', serif;
-    font-color: #0000b2;
+    color: #0000b2;
     font-size: 24px;
     text-align: center;
 }
-
 
 * {
     -webkit-box-sizing: border-box;
@@ -92,3 +97,10 @@ h2{
     height: 400px;
 }
 /*Portofolio*/
+
+/*AboutMe*/
+.items{
+  padding: 20px;
+  margin: 10px;
+  align-items: center;
+}
