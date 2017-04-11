@@ -36,6 +36,25 @@
 
 
 /*Portofolio*/
+#portofolio{
+  padding: 20px;
+  margin: 10px;
+}
+
+h1{
+
+    font-family: 'Amiri', serif;
+    font-color: #0000b2;
+    text-align: center;
+}
+h2{
+
+    font-family: 'Amiri', serif;
+    font-color: #0000b2;
+    font-size: 24px;
+    text-align: center;
+}
+
 
 * {
     -webkit-box-sizing: border-box;
