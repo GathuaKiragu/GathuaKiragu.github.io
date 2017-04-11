@@ -102,5 +102,5 @@ h2{
 .items{
   padding: 20px;
   margin: 10px;
-  align-items: center;
+  text-align: center;
 }
