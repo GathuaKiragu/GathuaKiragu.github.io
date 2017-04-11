@@ -7,6 +7,14 @@ body, html {
     color: #777;
 }
 
+h1{
+    font-family: 'Amiri', serif;
+    background-color: #c5af6c;
+    color: white;
+    padding: 14px 25px;
+    text-decoration: none;
+    display: inline-block;
+}
 
 /* Make Navbar Transparent */
 
