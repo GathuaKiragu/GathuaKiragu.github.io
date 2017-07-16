@@ -13,28 +13,33 @@
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/styles.css" rel="stylesheet">
 	<link href="css/skills.css" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="css/reset.css">
 	<!-- CSS reset -->
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<script>
+			new WOW().init();
+	</script>
 </head>
 
 <!-- Humberger menu -->
 
 <body>
-	<header>
+	<header id="head">
 		<nav class="cd-stretchy-nav">
 			<a class="cd-nav-trigger" href="#0">
 				<span aria-hidden="true"></span>
 			</a>
 			<ul>
-				<li><a href="#0" class="active"><span>Home</span></a></li>
-				<li><a href="#0"><span>Portfolio</span></a></li>
-				<li><a href="#0"><span>Services</span></a></li>
-				<li><a href="#0"><span>Store</span></a></li>
-				<li><a href="#0"><span>Contact</span></a></li>
+				<li><a href="#head" class="active"><span>Home</span></a></li>
+				<li><a href="#about"><span>about</span></a></li>
+				<li><a href="#skills"><span>Skills</span></a></li>
+				<li><a href="#portofolio"><span>Portofolio</span></a></li>
+				<li><a href="#contact"><span>Contact</span></a></li>
 			</ul>
 
 			<span aria-hidden="true" class="stretchy-nav-bg"></span>
@@ -45,7 +50,7 @@
 	<!-- Header -->
 	<header id="top" class="header">
 		<div class="text-vertical-center">
-			<h1>Brian Gathua</h1>
+			<h1 class="wow fadeInRight" data-wow-delay="0.2s">Brian Gathua</h1>
 			<h3>Android &amp; Web Developer</h3>
 			<br>
 			<a href="#about" class="btn btn-dark btn-lg">Find Out More</a>
@@ -53,19 +58,17 @@
 	</header>
 
 
-	<div class="container">
-
+	<div id="about class="container">
 		<hr class="featurette-divider">
-
 		<!-- First Featurette -->
-		<div class="featurette" id="about">
+		<div class="featurette wow bounceInUp" id="about">
 			<img class="featurette-image img-circle img-responsive pull-right" src="images/pic.JPG" width="400px" height="400px">
-			<h2 class="featurette-heading">About Me
+			<h2 class="featurette-heading">About Me<br>
 		                <span class="text-muted">Front End and Mobile Dev</span>
 		            </h2>
-			<p class="lead">My name is Kiragu Gathua, Currently a student at Moringa School specialising in front-end developmet and mobile dev. Im in love with writing code and creating responsive web pages, animation, user interface solutions and Graphic Design. I have also
-				been a student of Jomo Kenyatta Univeristy of Agriculture and Technology(Information Technology) since May 2014. I’m always open to exciting new job opportunities, with my Curriculum Vitae available on request. Please get in touch, it would be great
-				to hear from you.</p>
+			<p class="lead">My name is Kiragu Gathua, Currently a student at Moringa School specialising in front-end and mobile development. Im in love with writing code and creating responsive web pages, animation, user interface solutions and Graphic Design. I have also been
+				a student of Jomo Kenyatta Univeristy of Agriculture and Technology(Information Technology) since May 2014. I’m always open to exciting new job opportunities, with my Curriculum Vitae available on request.Get in touch, it would be great to hear from
+				you.</p>
 		</div>
 	</div>
 	<br>
@@ -83,47 +86,48 @@
 	<!-- </div> -->
 	<!-- /.container -->
 	<!-- </section> -->
-	<section id="about" class="about">
+	<section id="skills" class="about">
 		<div class="tainer">
 			<hr class="featurette-divider">
-			<center><h1> Skills</h1></center>
+			<center>
+				<h1 class="featurette-heading"> Skills</h1></center>
 			<div class="hold">
 				<p>AdobeSuite</p>
 				<div class="containerSkills">
 					<div class="skills photoshop">95%</div>
 				</div>
-			<p>HTML</p>
-			<div class="containerSkills">
-				<div class="skills html">90%</div>
-			</div>
+				<p>HTML</p>
+				<div class="containerSkills">
+					<div class="skills html">90%</div>
+				</div>
 
-			<p>CSS</p>
-			<div class="containerSkills">
-				<div class="skills css">80%</div>
-			</div>
-			<p>Java</p>
-			<div class="containerSkills">
-				<div class="skills java">75%</div>
-			</div>
-			<p>Javascript</p>
-			<div class="containerSkills">
-				<div class="skills javascript">73%</div>
-			</div>
-			<p>Angular2</p>
-			<div class="containerSkills">
-				<div class="skills angular">72%</div>
-			</div>
-			<p>Emberjs</p>
-			<div class="containerSkills">
-				<div class="skills ember">70%</div>
-			</div>
-			<p>Android Studio</p>
-			<div class="containerSkills">
-				<div class="skills android">70%</div>
-			</div>
+				<p>CSS</p>
+				<div class="containerSkills">
+					<div class="skills css">80%</div>
+				</div>
+				<p>Java</p>
+				<div class="containerSkills">
+					<div class="skills java">75%</div>
+				</div>
+				<p>Javascript</p>
+				<div class="containerSkills">
+					<div class="skills javascript">73%</div>
+				</div>
+				<p>Angular2</p>
+				<div class="containerSkills">
+					<div class="skills angular">72%</div>
+				</div>
+				<p>Emberjs</p>
+				<div class="containerSkills">
+					<div class="skills ember">70%</div>
+				</div>
+				<p>Android Studio</p>
+				<div class="containerSkills">
+					<div class="skills android">70%</div>
+				</div>
 
+			</div>
 		</div>
-	</div>
 	</section>
 
 	<!-- Portfolio -->
@@ -162,13 +166,21 @@
 								</a>
 							</div>
 						</div>
+						<div class="col-md-6">
+							<div class="portfolio-item">
+								<a href="#">
+									<img class="img-portfolio img-responsive" src="images/mb.png">
+								</a>
+							</div>
+						</div>
 					</div>
-					<!-- /.row (nested) -->
-					<a href="#" class="btn btn-dark">View More Items</a>
 				</div>
-				<!-- /.col-lg-10 -->
+				<!-- /.row (nested) -->
+				<a href="#service" class="btn btn-dark">View More Items</a>
 			</div>
-			<!-- /.row -->
+			<!-- /.col-lg-10 -->
+		</div>
+		<!-- /.row -->
 		</div>
 		<!-- /.container -->
 	</section>
@@ -194,12 +206,12 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-10 col-lg-offset-1 text-center">
-					<h4><strong>Start Bootstrap</strong>
+					<h4><strong>Contacts</strong>
                     </h4>
-					<p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+					<p>Brian Gathua<br>Nairobi,Kenya</p>
 					<ul class="list-unstyled">
-						<li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-						<li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:name@example.com">name@example.com</a>
+						<li><i class="fa fa-phone fa-fw"></i>+254701250543</li>
+						<li><i class="fa fa-envelope-o fa-fw"></i> <a href="mailto:kiragugathua@gmail.com">kiragugathua@gmail.com</a>
 						</li>
 					</ul>
 					<br>
