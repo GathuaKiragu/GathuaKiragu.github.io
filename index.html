@@ -6,8 +6,34 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" type="text/css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" type="text/css">\<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="css/styles.css" />
+	<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $(".but1").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
 </head>
 
 <body>
@@ -20,12 +46,12 @@
 			<!-- <span id="logo1" class="logo animated pulse"><img src="http://ivanbmusic.com/wp-content/uploads/2016/05/IvanB-Logo.png" alt="" width="300px" height="200px" /></span> -->
 			<h1>Hi</h1>
 			<h1>I'm Brian Gathua</h1>
-			<p>FrontEnd and Android Developer<br />
+			<p>Web and Android Developer<br />
 				<br>
 				<br>
-				<footer class="major">
+				<footer id="link1" class="major">
 					<ul class="actions">
-						<li><a href="#intro" class="button animated pulse" id="but1">View More</a></li>
+						<li><a href="#intro" class="but1 button  animated pulse">View More</a></li>
 					</ul>
 				</footer>
 		</header>
@@ -33,7 +59,7 @@
 		<!-- Nav -->
 		<nav id="nav">
 			<ul>
-				<li><a href="#intro" class="active">Who i am</a></li>
+				<li><a href="#intro" class="active">Who I am?</a></li>
 				<li><a href="#first">Works</a></li>
 				<li><a href="#second">Skills</a></li>
 				<li><a href="#footer">Contact Me</a></li>
@@ -48,12 +74,13 @@
 				<div class="spotlight">
 					<div class="content">
 						<header class="major">
-							<h2>Who i am</h2>
+							<h2>Who I am?</h2>
 						</header>
-						<p>My name is Kiragu Gathua,I am a frontEnd and Android developer. Im in love with writing code and creating responsive web pages, animation, user interface solutions and Graphic Design. I have been a student at Moringa School for past couple of months
-							specializing in both web and mobile dev.</p>
+						<p>My name is Kiragu Gathua, I am a <b>Web</b> and <b>Android Developer</b>. I love writing code and creating responsive Web pages, Animation, User Interface solutions and Graphic Design.I am a technology enthusiast and I strongly believe technology can, and should enrich every single life this universe has to offer.
+							 Outside of work I love travelling, listening to music, reading tech blogs and playing chess & video games.If you are a business seeking a <em>web presence</em> or an <em>employer</em> looking to hire, I'd love to get coffee and get to know you, so don’t hesitate to <a href="#footer">get in touch.</a></li>
+						</p>
 						<ul class="actions">
-							<li><a href="#first" class="button">Learn More</a></li>
+							<li><a href="#first" class="but1 button animated pulse">Learn More</a></li>
 						</ul>
 					</div>
 					<span class="image"><figure><img src="images/pic.JPG" alt="picture" /></figure</span>
@@ -71,46 +98,46 @@
 							<a href="http://mkenyadaima.herokuapp.com/"><img src="images/mkenya.png" alt="Mkenya Daima" width="300px" height="200px"></a>
 						</figure>
 						<h3>Mkenya Daima</h3>
-						<p>An online ecommerce website for selling Kenyan made merchandice</p>
+						<p class="para">An online ecommerce website for selling Kenyan made merchandice</p>
 					</li>
 					<li>
 						<figure>
 							<a href="https://techh20o.github.io/techh20.io/"><img src="https://api-2017.spaceappschallenge.org/team-photos/-PHmz_57KIR1dvtnpxMQcyQuAHk=/4997/width-800/" alt="Mkenya Daima" width="300px" height="200px"></a>
 						</figure>
 						<h3>Tech20</h3>
-						<p>A web app that utilizes satellite and crowd-sourced data to avail realtime information on fluctuating water levels across the country.</p>
+						<p class="para">A web app that utilizes satellite and crowd-sourced data to avail realtime information on fluctuating water levels across the country.</p>
 					</li>
 					<li>
 						<figure><a href="https://makeup-search.herokuapp.com" /><img src="images/makeup.png" alt="Mkenya Daima" width="300px" height="200px"></a>
 						</figure>
 						<h3>Make up Search Engine</h3>
-						<p>A java web application for searching different kinds of makeup</p>
+						<p class="para">A java web application for searching different kinds of makeup</p>
 					</li>
 					<li>
 						<figure>
 							<a href="https://gathua-message-board.herokuapp.com/"><img src="images/mb.png" alt="Mkenya Daima" width="300px" height="200px"></a>
 						</figure>
 						<h3>Message Board</h3>
-						<p>A question and answer message board ember app where a user submits a question and other users can respond with answers</p>
+						<p class="para">A question and answer message board ember app where a user submits a question and other users can respond with answers</p>
 					</li>
 					<li>
 						<figure>
 							<a href="https://salon-manager16.herokuapp.com/"><img src="images/salon.png" alt="Mkenya Daima" width="300px" height="200px"></a>
 						</figure>
 						<h3>Hair Salon Manager</h3>
-						<p>This is a java application that allows the owner of a given salon to add a list of stylists, and for each stylist,the owner chooses the clients who see that stylist</p>
+						<p class="para">This is a java application that allows the owner of a given salon to add a list of stylists, and for each stylist,the owner chooses the clients who see that stylist</p>
 					</li>
 					<li>
 						<figure>
 							<a href=""><img src="images/doc.png" alt="Mkenya Daima" width="300px" height="200px"></a>
 						</figure>
 						<h3>Find Doctor</h3>
-						<p>An Android application to find a doctors based on their location.</p>
+						<p class="para">An Android application to find a doctors based on their location.</p>
 					</li>
 				</ul>
 				<footer class="major">
 					<ul class="actions">
-						<li><a href="#second" class="button">View More</a></li>
+						<li><a href="#second" class="but1 button animated pulse">View More</a></li>
 					</ul>
 				</footer>
 			</section>
@@ -154,9 +181,6 @@
 						<strong>70%</strong> Mara Framework
 					</li>
 				</ul>
-				<ul class="actions">
-					<li><a href="#first" class="button">Home</a></li>
-				</ul>
 				</footer>
 			</section>
 
@@ -165,7 +189,7 @@
 		<!-- Footer -->
 		<footer id="footer">
 			<section>
-				<h2>Contacts Information</h2>
+				<h2>Contact Information</h2>
 				<dl class="alt">
 					<dt>Address</dt>
 					<dd>Nairobi Kenya</dd>
@@ -179,7 +203,7 @@
 						<li><a href="https://www.facebook.com/gathua.bryan" class="icon fa-facebook alt"><span class="label">Facebook</span></a></li>
 						<li><a href="https://www.instagram.com/bryangathua/" class="icon fa-instagram alt"><span class="label">Instagram</span></a></li>
 						<li><a href="https://github.com/GathuaKiragu" class="icon fa-github alt"><span class="label">GitHub</span></a></li>
-						<li><a href="linkedin.com/in/kiragu-gathua-138b97122/" class="icon fa-linkedin alt"><span class="label">Dribbble</span></a></li>
+						<li><a href="https://linkedin.com/in/kiragu-gathua-138b97122/" class="icon fa-linkedin alt"><span class="label">Dribbble</span></a></li>
 						</ul>
 			</section>
 			<p class="copyright">&copy; Kiragu
