@@ -6,131 +6,132 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" type="text/css"><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet" type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="css/styles.css" />
+
+
+	<!--Skill bar Styling-->
 	<style>
-/* Load animation */
+		@-webkit-keyframes load {
+			0% {
+				stroke-dashoffset: 0
+			}
+		}
 
-@-webkit-keyframes
-load { 0% {
-stroke-dashoffset:0
-}
-}
-@-moz-keyframes
-load { 0% {
-stroke-dashoffset:0
-}
-}
-@keyframes
-load { 0% {
-stroke-dashoffset:0
-}
-}
+		@-moz-keyframes load {
+			0% {
+				stroke-dashoffset: 0
+			}
+		}
 
-/* Container */
+		@keyframes load {
+			0% {
+				stroke-dashoffset: 0
+			}
+		}
+		/* Container */
 
-.progress {
-  position: relative;
-  display: inline-block;
-  padding: 0;
-  text-align: center;
-}
+		.progress {
+			position: relative;
+			display: inline-block;
+			padding: 0;
+			text-align: center;
+		}
+		/* Item */
 
-/* Item */
+		.progress>li {
+			display: inline-block;
+			position: relative;
+			text-align: center;
+			color: #93A2AC;
+			font-family: Lato;
+			font-weight: 100;
+			margin: 2rem;
+		}
 
-.progress>li {
-  display: inline-block;
-  position: relative;
-  text-align: center;
-  color: #93A2AC;
-  font-family: Lato;
-  font-weight: 100;
-  margin: 2rem;
-}
+		.progress>li:before {
+			content: attr(data-name);
+			position: absolute;
+			width: 100%;
+			bottom: -2rem;
+			font-weight: 400;
+		}
 
-.progress>li:before {
-  content: attr(data-name);
-  position: absolute;
-  width: 100%;
-  bottom: -2rem;
-  font-weight: 400;
-}
+		.progress>li:after {
+			content: attr(data-percent);
+			position: absolute;
+			width: 100%;
+			top: 3.7rem;
+			left: 0;
+			font-size: 2rem;
+			text-align: center;
+		}
 
-.progress>li:after {
-  content: attr(data-percent);
-  position: absolute;
-  width: 100%;
-  top: 3.7rem;
-  left: 0;
-  font-size: 2rem;
-  text-align: center;
-}
+		.progress svg {
+			width: 10rem;
+			height: 10rem;
+		}
 
-.progress svg {
-  width: 10rem;
-  height: 10rem;
-}
+		.progress svg:nth-child(2) {
+			position: absolute;
+			left: 0;
+			top: 0;
+			transform: rotate(-90deg);
+			-webkit-transform: rotate(-90deg);
+			-moz-transform: rotate(-90deg);
+			-ms-transform: rotate(-90deg);
+		}
 
-.progress svg:nth-child(2) {
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-}
+		.progress svg:nth-child(2) path {
+			fill: none;
+			stroke-width: 25;
+			stroke-dasharray: 629;
+			stroke: rgba(255, 255, 255, 0.9);
+			-webkit-animation: load 10s;
+			-moz-animation: load 10s;
+			-o-animation: load 10s;
+			animation: load 10s;
+		}
+	</style>
+	<!-- End of skill bar -->
 
-.progress svg:nth-child(2) path {
-  fill: none;
-  stroke-width: 25;
-  stroke-dasharray: 629;
-  stroke: rgba(255, 255, 255, 0.9);
-  -webkit-animation: load 10s;
-  -moz-animation: load 10s;
-  -o-animation: load 10s;
-  animation: load 10s;
-}
-</style>
 
-<!-- Scripts -->
-</script>
-  	<script>
-$(document).ready(function(){
-  // Add smooth scrolling to all links
-  $(".but1").on('click', function(event) {
+	<!-- Scripts -->
+	<script>
+		$(document).ready(function() {
+			// smooth scrolling to but1
+			$(".but1").on('click', function(event) {
 
-    // Make sure this.hash has a value before overriding default behavior
-    if (this.hash !== "") {
-      // Prevent default anchor click behavior
-      event.preventDefault();
+				if (this.hash !== "") {
+					// Prevent default anchor click behavior
+					event.preventDefault();
 
-      // Store hash
-      var hash = this.hash;
+					// Store hash
+					var hash = this.hash;
 
-      // Using jQuery's animate() method to add smooth page scroll
-      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-      $('html, body').animate({
-        scrollTop: $(hash).offset().top
-      }, 800, function(){
+					// Using jQuery's animate() method to add smooth page scroll
+					// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+					$('html, body').animate({
+						scrollTop: $(hash).offset().top
+					}, 800, function() {
 
-        // Add hash (#) to URL when done scrolling (default click behavior)
-        window.location.hash = hash;
-      });
-    } // End if
-  });
-});
-</script>
+						// Add hash (#) to URL when done scrolling (default click behavior)
+						window.location.hash = hash;
+					});
+				} // End if
+			});
+		});
+	</script>
 </head>
 
 <body>
 
+
 	<!-- Wrapper -->
 	<div id="wrapper">
-
 		<!-- Header -->
 		<header id="header" class="alt">
-			<!-- <span id="logo1" class="logo animated pulse"><img src="http://ivanbmusic.com/wp-content/uploads/2016/05/IvanB-Logo.png" alt="" width="300px" height="200px" /></span> -->
 			<h1>Hello,</h1>
 			<h1>My name is <b>Brian Gathua</b></h1>
 			<p>I am a Web and Android Developer<br />
@@ -163,8 +164,8 @@ $(document).ready(function(){
 						<header class="major">
 							<h2>Who I am</h2>
 						</header>
-						<p>My name is Kiragu Gathua, I am a <b>Web</b> and <b>Android Developer</b>. I love writing code and creating responsive Web pages, Animation, User Interface solutions and Graphic Design.I am a technology enthusiast and I strongly believe technology can, and should enrich every single life this universe has to offer.
-							 Outside of work I love travelling, listening to music, reading tech blogs and playing chess & video games.If you are a business seeking a <em>web presence</em> or an <em>employer</em> looking to hire, I'd love to get coffee and get to know you, so don’t hesitate to <a href="#footer" class="but1">get in touch.</a></li>
+						<p>My name is Kiragu Gathua, I am a <b>Web</b> and <b>Android Developer</b>. I love writing code and creating responsive Web pages, Animation, User Interface solutions and Graphic Design.I am a technology enthusiast and I strongly believe technology
+							can, and should enrich every single life this universe has to offer. Outside of work I love travelling, listening to music, reading tech blogs and playing chess & video games.If you are a business seeking a <em>web presence</em> or an <em>employer</em>							looking to hire, I'd love to get coffee and get to know you, so don’t hesitate to <a href="#footer" class="but1">get in touch.</a></li>
 						</p>
 						<ul class="actions">
 							<li><a href="#first" class="but1 button animated pulse">Learn More</a></li>
@@ -179,6 +180,9 @@ $(document).ready(function(){
 				<header class="major">
 					<h2>Works</h2>
 				</header>
+
+				<!--Portfolio-->
+
 				<ul class="features">
 					<li>
 						<figure>
@@ -187,6 +191,7 @@ $(document).ready(function(){
 						<h3>Mkenya Daima</h3>
 						<p class="para">An online ecommerce website for selling Kenyan made merchandice</p>
 					</li>
+
 					<li>
 						<figure>
 							<a href="https://techh20o.github.io/techh20.io/"><img src="https://api-2017.spaceappschallenge.org/team-photos/-PHmz_57KIR1dvtnpxMQcyQuAHk=/4997/width-800/" alt="Mkenya Daima" width="300px" height="200px"></a>
@@ -194,6 +199,7 @@ $(document).ready(function(){
 						<h3>Tech20</h3>
 						<p class="para">A web app that utilizes satellite and crowd-sourced data to avail realtime information on fluctuating water levels across the country.</p>
 					</li>
+
 					<li>
 						<figure><a href="https://makeup-search.herokuapp.com" /><img src="images/makeup.png" alt="Mkenya Daima" width="300px" height="200px"></a>
 						</figure>
@@ -231,52 +237,19 @@ $(document).ready(function(){
 					</ul>
 				</footer>
 			</section>
+			<!-- End of portfolio -->
 
-			<!-- Second Section -->
+
+			<!-- Skills -->
+
 			<section id="second" class="main special">
 				<header class="major">
 					<h2>Skills</h2>
 				</header>
-				<!-- <ul class="statistics">
-					<li class="style1">
-						<strong>95%</strong> HTML5
-					</li>
-					<li class="style2">
-						<strong>85%</strong> CSS3
-					</li>
-					<li class="style3">
-						<strong>70%</strong> Javascript
-					</li>
-					<li class="style4">
-						<strong>70%</strong> Java
-					</li>
-					<li class="style5">
-						<strong>70%</strong> Angular2
-					</li>
-				</ul>
-				<ul class="statistics">
-					<li class="style1">
-						<strong>75%</strong> Ember FrameWork
-					</li>
-					<li class="style2">
-						<strong>75%</strong> Spark Framework
-					</li>
-					<li class="style3">
-						<strong>70%</strong> Android Studio
-					</li>
-					<li class="style4">
-						<strong>70%</strong> Adobe Suite
-					</li>
-					<li class="style5">
-						<strong>70%</strong> Mara Framework
-					</li>
-				</ul>
-				</footer> -->
-
-
+				<!-- Skillbar -->
 				<ul class="progress">
-  <!--  Item  -->
-	<li data-name="HTML5" data-percent="80%"> <svg viewBox="-10 -10 220 220">
+					<!--  Item  -->
+					<li data-name="HTML5" data-percent="80%"> <svg viewBox="-10 -10 220 220">
     <g fill="none" stroke-width="2" transform="translate(100,100)">
       <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
       <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
@@ -288,8 +261,8 @@ $(document).ready(function(){
     </svg> <svg viewBox="-10 -10 220 220">
     <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="520"></path>
     </svg> </li>
-  <!--  Item  -->
-  <li data-name="CSS3" data-percent="75%"> <svg viewBox="-10 -10 220 220">
+					<!--  Item  -->
+					<li data-name="CSS3" data-percent="75%"> <svg viewBox="-10 -10 220 220">
     <g fill="none" stroke-width="2" transform="translate(100,100)">
       <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
       <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
@@ -301,8 +274,8 @@ $(document).ready(function(){
     </svg> <svg viewBox="-10 -10 220 220">
     <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="480"></path>
     </svg> </li>
-  <!--  Item  -->
-	<li data-name="JavaScript" data-percent="68%"> <svg viewBox="-10 -10 220 220">
+					<!--  Item  -->
+					<li data-name="JavaScript" data-percent="68%"> <svg viewBox="-10 -10 220 220">
 		<g fill="none" stroke-width="2" transform="translate(100,100)">
 			<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
 			<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
@@ -314,8 +287,8 @@ $(document).ready(function(){
 		</svg> <svg viewBox="-10 -10 220 220">
 		<path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="440"></path>
 		</svg> </li>
-  <!--  Item  -->
-  <li data-name="Java" data-percent="65%"> <svg viewBox="-10 -10 220 220">
+					<!--  Item  -->
+					<li data-name="Java" data-percent="65%"> <svg viewBox="-10 -10 220 220">
     <g fill="none" stroke-width="2" transform="translate(100,100)">
       <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
       <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
@@ -327,8 +300,8 @@ $(document).ready(function(){
     </svg> <svg viewBox="-10 -10 220 220">
     <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="430"></path>
     </svg> </li>
-  <!--  Item  -->
-  <li data-name="Adobe Suite" data-percent="78%"> <svg viewBox="-10 -10 220 220">
+					<!--  Item  -->
+					<li data-name="Adobe Suite" data-percent="78%"> <svg viewBox="-10 -10 220 220">
     <g fill="none" stroke-width="2" transform="translate(100,100)">
       <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
       <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
@@ -340,8 +313,8 @@ $(document).ready(function(){
     </svg> <svg viewBox="-10 -10 220 220">
     <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="500"></path>
     </svg> </li>
-  <!--  Item  -->
-  <li data-name="Android Studio" data-percent="65%"> <svg viewBox="-10 -10 220 220">
+					<!--  Item  -->
+					<li data-name="Android Studio" data-percent="65%"> <svg viewBox="-10 -10 220 220">
     <g fill="none" stroke-width="2" transform="translate(100,100)">
       <path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)"/>
       <path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)"/>
@@ -353,9 +326,9 @@ $(document).ready(function(){
     </svg> <svg viewBox="-10 -10 220 220">
     <path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="430"></path>
     </svg> </li>
-</ul>
-<!--  Defining Angle Gradient Colors  -->
-<svg width="0" height="0">
+				</ul>
+				<!--  Defining Angle Gradient Colors  -->
+				<svg width="0" height="0">
 <defs>
   <linearGradient id="cl1" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1">
     <stop stop-color="#618099"/>
@@ -386,7 +359,7 @@ $(document).ready(function(){
 			</section>
 
 		</div>
-
+		<!--End of skills-->
 		<!-- Footer -->
 		<footer id="footer">
 			<section>
