@@ -1,464 +1,1632 @@
-<!DOCTYPE HTML>
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Brian Gathua</title>
-	<meta charset="utf-8" />
-	<link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/f/ff/Logo_ligne_B_Narbonne.png" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-		type="text/css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet"
-		type="text/css">
-	<link href="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" rel="stylesheet" type="text/css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="css/styles.css" />
-
-
-	<!--Skill bar Styling-->
-	<style>
-		@-webkit-keyframes load {
-			0% {
-				stroke-dashoffset: 0
-			}
-		}
-
-		@-moz-keyframes load {
-			0% {
-				stroke-dashoffset: 0
-			}
-		}
-
-		@keyframes load {
-			0% {
-				stroke-dashoffset: 0
-			}
-		}
-
-		/* Container */
-
-		.progress {
-			position: relative;
-			display: inline-block;
-			padding: 0;
-			text-align: center;
-		}
-
-		/* Item */
-
-		.progress>li {
-			display: inline-block;
-			position: relative;
-			text-align: center;
-			color: #93A2AC;
-			font-family: Lato;
-			font-weight: 100;
-			margin: 2rem;
-		}
-
-		.progress>li:before {
-			content: attr(data-name);
-			position: absolute;
-			width: 100%;
-			bottom: -2rem;
-			font-weight: 400;
-		}
-
-		.progress>li:after {
-			content: attr(data-percent);
-			position: absolute;
-			width: 100%;
-			top: 3.7rem;
-			left: 0;
-			font-size: 2rem;
-			text-align: center;
-		}
-
-		.progress svg {
-			width: 10rem;
-			height: 10rem;
-		}
-
-		.progress svg:nth-child(2) {
-			position: absolute;
-			left: 0;
-			top: 0;
-			transform: rotate(-90deg);
-			-webkit-transform: rotate(-90deg);
-			-moz-transform: rotate(-90deg);
-			-ms-transform: rotate(-90deg);
-		}
-
-		.progress svg:nth-child(2) path {
-			fill: none;
-			stroke-width: 25;
-			stroke-dasharray: 629;
-			stroke: rgba(255, 255, 255, 0.9);
-			-webkit-animation: load 10s;
-			-moz-animation: load 10s;
-			-o-animation: load 10s;
-			animation: load 10s;
-		}
-	</style>
-	<!-- End of skill bar -->
-
-
-	<!-- Scripts -->
-	<script>
-		$(document).ready(function () {
-			// smooth scrolling to but1
-			$(".but1").on('click', function (event) {
-
-				if (this.hash !== "") {
-					// Prevent default anchor click behavior
-					event.preventDefault();
-
-					// Store hash
-					var hash = this.hash;
-
-					// Using jQuery's animate() method to add smooth page scroll
-					// The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-					$('html, body').animate({
-						scrollTop: $(hash).offset().top
-					}, 800, function () {
-
-						// Add hash (#) to URL when done scrolling (default click behavior)
-						window.location.hash = hash;
-					});
-				} // End if
-			});
-		});
-	</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian Gathua | Engineering Lead & Senior Developer</title>
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/f/ff/Logo_ligne_B_Narbonne.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --matrix-green: #00ff41;
+            --terminal-cyan: #00d8ff;
+            --hacker-yellow: #f9f1a5;
+            --neon-purple: #9d4edd;
+            --deep-blue: #0a192f;
+            --dark-bg: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-primary: #f0f6fc;
+            --text-secondary: #8b949e;
+            --success: #238636;
+            --warning: #f0883e;
+            --error: #f85149;
+            
+            --glow-green: 0 0 20px rgba(0, 255, 65, 0.3);
+            --glow-blue: 0 0 20px rgba(0, 216, 255, 0.3);
+            --glow-purple: 0 0 20px rgba(157, 78, 221, 0.3);
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'IBM Plex Mono', 'Fira Code', monospace;
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 255, 65, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, rgba(0, 216, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 40% 80%, rgba(157, 78, 221, 0.05) 0%, transparent 20%);
+        }
+        
+        /* Matrix Rain Effect */
+        #matrixCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.15;
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            background: rgba(13, 17, 23, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--matrix-green);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+        }
+        
+        .logo::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+            color: var(--matrix-green);
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: var(--transition);
+            padding: 5px 0;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--matrix-green);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--matrix-green);
+            transition: var(--transition);
+        }
+        
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--terminal-cyan);
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+        
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--matrix-green), var(--terminal-cyan));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: var(--glow-green);
+        }
+        
+        .hero-role {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .hero-role span {
+            color: var(--matrix-green);
+            font-weight: 600;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+        
+        .terminal-preview {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 3rem;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--glow-green);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .terminal-title {
+            font-size: 1rem;
+            color: var(--matrix-green);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .terminal-buttons {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .terminal-button.close { background: #ff5f56; }
+        .terminal-button.minimize { background: #ffbd2e; }
+        .terminal-button.maximize { background: #27ca3f; }
+        
+        .terminal-content {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        .terminal-line {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .terminal-prompt {
+            color: var(--matrix-green);
+            margin-right: 10px;
+            font-weight: 600;
+        }
+        
+        .terminal-command {
+            color: var(--text-primary);
+        }
+        
+        .terminal-output {
+            color: var(--text-secondary);
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+        
+        /* Sections */
+        section {
+            padding: 120px 0;
+            position: relative;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--matrix-green);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .stat-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px 20px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--matrix-green);
+            box-shadow: var(--glow-green);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--matrix-green);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-category {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .skill-category:hover {
+            border-color: var(--terminal-cyan);
+            box-shadow: var(--glow-blue);
+            transform: translateY(-5px);
+        }
+        
+        .skill-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 216, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--terminal-cyan);
+        }
+        
+        .skill-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-item {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .skill-name {
+            color: var(--text-secondary);
+        }
+        
+        .skill-level {
+            color: var(--matrix-green);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .skill-bar {
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--matrix-green), var(--terminal-cyan));
+            border-radius: 3px;
+            width: 0;
+            transition: width 1.5s ease-out;
+        }
+        
+        /* Experience Section */
+        .experience-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--matrix-green), var(--terminal-cyan));
+        }
+        
+        .timeline-item {
+            margin-bottom: 60px;
+            position: relative;
+            width: 50%;
+            padding-right: 60px;
+        }
+        
+        .timeline-item:nth-child(even) {
+            margin-left: auto;
+            padding-right: 0;
+            padding-left: 60px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            right: -10px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background: var(--matrix-green);
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 15px var(--matrix-green);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-dot {
+            right: auto;
+            left: -10px;
+        }
+        
+        .timeline-content {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .timeline-content:hover {
+            border-color: var(--neon-purple);
+            box-shadow: var(--glow-purple);
+            transform: translateY(-5px);
+        }
+        
+        .timeline-period {
+            color: var(--matrix-green);
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .timeline-company {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+        
+        .timeline-role {
+            color: var(--terminal-cyan);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .timeline-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+        
+        .timeline-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .tech-tag {
+            background: rgba(0, 216, 255, 0.1);
+            color: var(--terminal-cyan);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--matrix-green);
+            box-shadow: var(--glow-green);
+        }
+        
+        .project-header {
+            padding: 25px 25px 0;
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .project-icon {
+            color: var(--matrix-green);
+            font-size: 1.3rem;
+        }
+        
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .project-tag {
+            background: rgba(0, 255, 65, 0.1);
+            color: var(--matrix-green);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .project-links {
+            padding: 0 25px 25px;
+            margin-top: auto;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--terminal-cyan);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .project-link:hover {
+            color: var(--matrix-green);
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .contact-item:hover {
+            border-color: var(--terminal-cyan);
+            transform: translateX(5px);
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 216, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--terminal-cyan);
+        }
+        
+        .contact-details h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--text-primary);
+        }
+        
+        .contact-details p {
+            color: var(--text-secondary);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: var(--card-bg);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+        
+        .social-link:hover {
+            color: var(--matrix-green);
+            border-color: var(--matrix-green);
+            transform: translateY(-5px);
+            box-shadow: var(--glow-green);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--card-bg);
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--matrix-green);
+            margin-bottom: 20px;
+        }
+        
+        .footer-copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 30px;
+        }
+        
+        /* Animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Code Window Effect */
+        .code-window {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-top: 40px;
+            overflow-x: auto;
+        }
+        
+        .code-line {
+            margin-bottom: 5px;
+        }
+        
+        .code-comment {
+            color: var(--success);
+        }
+        
+        .code-keyword {
+            color: var(--neon-purple);
+        }
+        
+        .code-function {
+            color: var(--terminal-cyan);
+        }
+        
+        .code-string {
+            color: var(--hacker-yellow);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .hero-title { font-size: 3.8rem; }
+        }
+        
+        @media (max-width: 992px) {
+            .about-content, .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .experience-timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 0;
+            }
+            
+            .timeline-item:nth-child(even) {
+                margin-left: 0;
+                padding-left: 60px;
+            }
+            
+            .timeline-dot {
+                left: 20px;
+                right: auto;
+            }
+            
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3rem; }
+            .hero-role { font-size: 1.5rem; }
+            .section-title { font-size: 2.3rem; }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                color: var(--text-primary);
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            
+            .about-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            .about-stats { grid-template-columns: 1fr; }
+            .stat-number { font-size: 2rem; }
+        }
+    </style>
 </head>
-
 <body>
-
-
-	<!-- Wrapper -->
-	<div id="wrapper">
-		<!-- Header -->
-		<header id="header" class="alt">
-			<h1>Hello,</h1>
-			<h1>My name is <b>Brian Gathua</b></h1>
-			<p>Software Developer based in Nairobi<br />
-				<br>
-				<br>
-			<footer id="link1" class="major">
-				<ul class="actions">
-					<li><a href="#intro" class="but1 button  animated pulse">View more</a></li>
-				</ul>
-			</footer>
-		</header>
-
-		<!-- Nav -->
-		<nav id="nav">
-			<ul>
-				<li><a href="#intro" class="active">Who I am</a></li>
-				<li><a href="#first">Works</a></li>
-				<li><a href="#second">Skills</a></li>
-				<li><a href="#footer">Contact Me</a></li>
-			</ul>
-		</nav>
-
-		<!-- Main -->
-		<div id="main">
-
-			<!-- Introduction -->
-			<section id="intro" class="main">
-				<div class="spotlight">
-					<div class="content">
-						<header class="major">
-							<h2>Who I am</h2>
-						</header>
-						<p>I am an experienced software engineer with a passion for developing innovative programs that
-							expedite the efficiency and effectiveness of organizational success.
-							I'm well-versed in technology and writing code to create systems that are reliable and
-							user-friendly. I'm a skilled leader who has the proven ability to motivate, educate, and
-							manage a team of professionals to build software programs and effectively track changes.
-							A confident communicator, strategic thinker, and innovative creator to develop software that
-							is customized to meet a company’s organizational needs, highlight their core competencies,
-							and further their success.
-						</p>
-						<ul class="actions">
-							<li><a href="#first" class="but1 button animated pulse">Learn More</a></li>
-						</ul>
-					</div>
-					<span class="image">
-						<figure><img src="images/unnamed.jpg" alt="picture" /></figure< /span>
-				</div>
-			</section>
-
-			<!-- First Section -->
-			<section id="first" class="main special">
-				<header class="major">
-					<h2>Works</h2>
-				</header>
-
-				<!--Portfolio-->
-
-				<ul class="features">
-					<li>
-						<figure>
-							<a href="http://188.166.77.31/"><img
-									src="https://www.nutrientplatform.org/wp-content/uploads/2016/07/deltares-350x350.png"
-									alt="Deltares" width="300px" height="200px"></a>
-						</figure>
-						<h3>Deltares</h3>
-						<p class="para">Lead Software Developer - We worked on building flood hazard and risk scenario dashboard
-							for use by basin and municipal
-							authorities as well as other research/training institutions in the principal urban area of
-							Zanzibar and the Metropolitan area of Dar es Salaam</p>
-					</li>
-
-					<li>
-						<figure>
-							<a href="https://cropmonitor.org/index.php/cmreports/earlywarning-report/"><img
-									src="data:image/png;base64,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"
-									alt="Geoglam" width="300px" height="200px"></a>
-						</figure>
-						<h3>Geoglam Kenya and Uganda</h3>
-						<p class="para">Project Manager & Developer - Developed a mobile application with digital forms to help train machine learning
-							algorithms to automatically detect crops and their stage condition and Managed the data
-							collection and field verification of ESA monitoring through G20_GEOGLAM and CopernicusEU.
-					</li>
-
-					<li>
-						<figure><a
-								href="https://play.google.com/store/apps/details?id=com.upande.vipimo&hl=en_SG&gl=US"><img
-									src="https://play-lh.googleusercontent.com/atwFjVCTT72ow28hZE3wXFADzbCiJy3d-Q7lMHSRgCRaihtiE6GnMEdyl2kukPyRB9Pe=s180-rw"
-									alt="Vipimo Crossplatform App" width="300px" height="200px"></a>
-						</figure>
-						<h3>Vipimo Cross platform App</h3>
-						<p class="para">Mobile developer - Developed Vipimo Mobile application a solution that enables users to remotely monitor live
-							conditions in the agricultural fields.
-						</p>
-					</li>
-
-					<li>
-						<figure>
-							<a href="https://play.google.com/store/apps/details?id=org.icipe.collect&hl=en&gl=US"><img
-									src="https://play-lh.googleusercontent.com/Ii4SyL777kQzRKyj1D7k7GcihkjxSzGpsRWTGfZc6iPxsmhan5AbowB7_5VGFTMlYIY=s180-rw"
-									alt="Appid App" width="300px" height="200px"></a>
-						</figure>
-						<h3>Appid collect Mobile App</h3>
-						<p class="para">Project manager & Lead software Developer - Lead an team that developed an odk
-							powered application for ICIPE an insect research institution based in Nairobi which helps
-							them in daily
-							record keeping, sampling, and performance. .
-						</p>
-					</li>
-
-					<li>
-						<figure>
-							<a
-								href="https://play.google.com/store/apps/details?id=com.mara.upande.groundtruth20&hl=en_SG&gl=US"><img
-									src="https://play-lh.googleusercontent.com/DsvMBo19FzJm0muo5b9Umew2YrHyqQLxMq43X1d5krh26HoKmo6lM3R1Ykm90pIfhUMM=s180-rw"
-									alt="Learn Ksl" width="300px" height="200px"></a>
-						</figure>
-						<h3>Mara Citizen Observatory</h3>
-						<p class="para">Mobile Developer - Developed an EU sponsored Maasai Mara Citizen Observatory Android App that
-							allows citizens (local & tourists) to collect key data from the field ranging from
-							biodiversity sightings to human-wildlife conflict locations to the updating of fences and
-							roads</p>
-					</li>
-
-					<li>
-						<figure>
-							<a
-								href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fapkpure.com%2Fmoot-cash-back-savings-rewards-coupons-app%2Fcom.moot_technologies.moot_Technologies&psig=AOvVaw0QAs1oqqdXSRQnP-nihAwz&ust=1649252175449000&source=images&cd=vfe&ved=2ahUKEwjx3eKhhf32AhUOQvEDHY4HD54Qr4kDegUIARCgAQ"><img
-									src="https://image.winudf.com/v2/image1/Y29tLm1vb3RfdGVjaG5vbG9naWVzLm1vb3RfVGVjaG5vbG9naWVzX3NjcmVlbl81XzE2MDA0OTc2MzVfMDg0/screen-5.jpg?fakeurl=1&type=.jpg"
-									alt="Mkenya Daima" width="300px" height="200px"></a>
-						</figure>
-						<h3>Moot rewards</h3>
-						<p class="para">Android Developer - Moot is an app that rewards shoppers for doing all the
-							things they normally do.
-							This includes browsing content and offers, watching videos, walking into stores, engaging
-							with products on the shelf, and making purchases, both online and offline. Moot truly
-							rewards its users for shopping anytime, anywher</p>
-					</li>
-				</ul>
-				<footer class="major">
-					<ul class="actions">
-						<li><a href="#second" class="but1 button animated pulse">View More</a></li>
-					</ul>
-				</footer>
-			</section>
-			<!-- End of portfolio -->
-
-
-			<!-- Skills -->
-
-			<section id="second" class="main special wow fadeIn">
-				<header class="major">
-					<h2>Skills</h2>
-				</header>
-				<!-- Skillbar -->
-				<ul class="progress">
-					<!--  Item  -->
-					<li data-name="Flutter" data-percent="80%"> <svg viewBox="-10 -10 220 220">
-							<g fill="none" stroke-width="2" transform="translate(100,100)">
-								<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)" />
-								<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)" />
-								<path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)" />
-								<path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)" />
-								<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)" />
-								<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)" />
-							</g>
-						</svg> <svg viewBox="-10 -10 220 220">
-							<path
-								d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z"
-								stroke-dashoffset="520"></path>
-						</svg> </li>
-					<!--  Item  -->
-					<li data-name="NodeJS" data-percent="75%"> <svg viewBox="-10 -10 220 220">
-							<g fill="none" stroke-width="2" transform="translate(100,100)">
-								<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)" />
-								<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)" />
-								<path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)" />
-								<path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)" />
-								<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)" />
-								<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)" />
-							</g>
-						</svg> <svg viewBox="-10 -10 220 220">
-							<path
-								d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z"
-								stroke-dashoffset="480"></path>
-						</svg> </li>
-					<!--  Item  -->
-					<li data-name="JavaScript" data-percent="68%"> <svg viewBox="-10 -10 220 220">
-							<g fill="none" stroke-width="2" transform="translate(100,100)">
-								<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)" />
-								<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)" />
-								<path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)" />
-								<path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)" />
-								<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)" />
-								<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)" />
-							</g>
-						</svg> <svg viewBox="-10 -10 220 220">
-							<path
-								d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z"
-								stroke-dashoffset="440"></path>
-						</svg> </li>
-					<!--  Item  -->
-					<li data-name="Java" data-percent="65%"> <svg viewBox="-10 -10 220 220">
-							<g fill="none" stroke-width="2" transform="translate(100,100)">
-								<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)" />
-								<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)" />
-								<path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)" />
-								<path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)" />
-								<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)" />
-								<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)" />
-							</g>
-						</svg> <svg viewBox="-10 -10 220 220">
-							<path
-								d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z"
-								stroke-dashoffset="430"></path>
-						</svg> </li>
-					<!--  Item  -->
-					<li data-name="Graphic Design" data-percent="78%"> <svg viewBox="-10 -10 220 220">
-							<g fill="none" stroke-width="2" transform="translate(100,100)">
-								<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)" />
-								<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)" />
-								<path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)" />
-								<path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)" />
-								<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)" />
-								<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)" />
-							</g>
-						</svg> <svg viewBox="-10 -10 220 220">
-							<path
-								d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z"
-								stroke-dashoffset="500"></path>
-						</svg> </li>
-					<!--  Item  -->
-					<li data-name="Android Studio" data-percent="65%"> <svg viewBox="-10 -10 220 220">
-							<g fill="none" stroke-width="2" transform="translate(100,100)">
-								<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)" />
-								<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)" />
-								<path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)" />
-								<path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)" />
-								<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)" />
-								<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)" />
-							</g>
-						</svg> <svg viewBox="-10 -10 220 220">
-							<path
-								d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z"
-								stroke-dashoffset="430"></path>
-						</svg> </li>
-				</ul>
-				<!--  Defining Angle Gradient Colors  -->
-				<svg width="0" height="0">
-					<defs>
-						<linearGradient id="cl1" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1">
-							<stop stop-color="#618099" />
-							<stop offset="100%" stop-color="#8e6677" />
-						</linearGradient>
-						<linearGradient id="cl2" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1">
-							<stop stop-color="#8e6677" />
-							<stop offset="100%" stop-color="#9b5e67" />
-						</linearGradient>
-						<linearGradient id="cl3" gradientUnits="objectBoundingBox" x1="1" y1="0" x2="0" y2="1">
-							<stop stop-color="#9b5e67" />
-							<stop offset="100%" stop-color="#9c787a" />
-						</linearGradient>
-						<linearGradient id="cl4" gradientUnits="objectBoundingBox" x1="1" y1="1" x2="0" y2="0">
-							<stop stop-color="#9c787a" />
-							<stop offset="100%" stop-color="#817a94" />
-						</linearGradient>
-						<linearGradient id="cl5" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="0" y2="0">
-							<stop stop-color="#817a94" />
-							<stop offset="100%" stop-color="#498a98" />
-						</linearGradient>
-						<linearGradient id="cl6" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="1" y2="0">
-							<stop stop-color="#498a98" />
-							<stop offset="100%" stop-color="#618099" />
-						</linearGradient>
-					</defs>
-				</svg>
-			</section>
-
-		</div>
-		<!--End of skills-->
-		<!-- Footer -->
-		<footer id="footer">
-			<section>
-				<h2>Contact Information</h2>
-				<dl class="alt">
-					<dt>Address</dt>
-					<dd>Nairobi Kenya</dd>
-					<dt>Phone</dt>
-					<dd>+254701250543 or +254795019084</dd>
-					<dt>Email</dt>
-					<dd><a href="mailto:kiragugathua@gmail.com">kiragugathua@gmail.com</dd>
-				</dl>
-				<ul class="icons">
-					<li><a href="https://twitter.com/Gathua_Kiragu" class="icon fa-twitter alt"><span
-								class="label">Twitter</span></a></li>
-					<li><a href="https://www.facebook.com/gathua.bryan" class="icon fa-facebook alt"><span
-								class="label">Facebook</span></a></li>
-					<li><a href="https://www.instagram.com/bryangathua/" class="icon fa-instagram alt"><span
-								class="label">Instagram</span></a></li>
-					<li><a href="https://github.com/GathuaKiragu" class="icon fa-github alt"><span
-								class="label">GitHub</span></a></li>
-					<li><a href="https://linkedin.com/in/kiragu-gathua-138b97122/" class="icon fa-linkedin alt"><span
-								class="label">Dribbble</span></a></li>
-				</ul>
-			</section>
-			<a href="#intro">
-				<p class="copyright">&copy; Kiragu</p>
-			</a>
-		</footer>
-
-	</div>
-
-	<!-- Scripts -->
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery.scrollex.min.js"></script>
-	<script src="js/jquery.scrolly.min.js"></script>
-	<script src="js/skel.min.js"></script>
-	<script src="js/util.js"></script>
-	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	<script src="js/main.js"></script>
-
+    <!-- Matrix Rain Background -->
+    <canvas id="matrixCanvas"></canvas>
+    
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="nav-container">
+                <a href="#home" class="logo">
+                    <i class="fas fa-terminal"></i>
+                    <span>BGATHUA</span>
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="hero-subtitle">> Welcome to my engineering portfolio</p>
+                <h1 class="hero-title">BRIAN GATHUA KIRAGU</h1>
+                <h2 class="hero-role">Engineering Lead | <span>Senior Software Developer</span></h2>
+                <p class="hero-description">
+                    I architect and build scalable digital solutions that transform businesses. 
+                    With over 5 years of experience leading engineering teams and delivering 
+                    enterprise-grade applications across mobile, web, and IoT platforms.
+                </p>
+                
+                <div class="terminal-preview animate-on-scroll">
+                    <div class="terminal-header">
+                        <div class="terminal-title">
+                            <i class="fas fa-code"></i>
+                            <span>terminal — brian@gathua — 80×24</span>
+                        </div>
+                        <div class="terminal-buttons">
+                            <div class="terminal-button close"></div>
+                            <div class="terminal-button minimize"></div>
+                            <div class="terminal-button maximize"></div>
+                        </div>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command">whoami</span>
+                        </div>
+                        <div class="terminal-output">Brian Gathua — Engineering Lead @ Jaguar Petroleum</div>
+                        
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command">pwd</span>
+                        </div>
+                        <div class="terminal-output">/engineering/leadership/full-stack-development</div>
+                        
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command">ls -la projects/</span>
+                        </div>
+                        <div class="terminal-output">JGas  JMobility  ICEA-Agents  ICEA-Clients  ERPNext-Migration  Flood-Dashboard</div>
+                        
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command">cat skills.txt | grep "Expert"</span>
+                        </div>
+                        <div class="terminal-output">Flutter • Node.js • Spring Boot • AWS • Docker • CI/CD • System Architecture</div>
+                        
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command" style="color: var(--matrix-green); font-weight: 600;">_</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Engineering leader specializing in digital transformation and scalable system architecture</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text animate-on-scroll">
+                    <p>
+                        I'm an <strong style="color: var(--matrix-green);">Engineering Lead and Senior Full-Stack Developer</strong> with extensive experience 
+                        in designing and delivering enterprise-grade solutions that drive digital transformation across industries.
+                    </p>
+                    <p>
+                        My expertise spans <strong style="color: var(--terminal-cyan);">system architecture</strong>, <strong style="color: var(--terminal-cyan);">team leadership</strong>, and 
+                        <strong style="color: var(--terminal-cyan);">cross-platform development</strong>. I excel at turning complex business requirements 
+                        into elegant technical solutions that scale.
+                    </p>
+                    <p>
+                        Currently leading engineering initiatives at <strong style="color: var(--matrix-green);">Jaguar Petroleum</strong>, where I oversee the 
+                        development of real-time platforms, ERP migrations, and IoT systems across six countries.
+                    </p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-card animate-on-scroll">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-card animate-on-scroll">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Projects Delivered</div>
+                        </div>
+                        <div class="stat-card animate-on-scroll">
+                            <div class="stat-number">6</div>
+                            <div class="stat-label">Countries Served</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="code-window animate-on-scroll">
+                    <div class="code-line"><span class="code-comment">// Engineering Philosophy</span></div>
+                    <div class="code-line"><span class="code-keyword">class</span> <span class="code-function">EngineeringApproach</span> {</div>
+                    <div class="code-line">&nbsp;&nbsp;<span class="code-function">constructor</span>() {</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">this</span>.architecture = <span class="code-string">"Scalable & Maintainable"</span>;</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">this</span>.methodology = <span class="code-string">"Agile & Iterative"</span>;</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">this</span>.quality = <span class="code-string">"Production-Grade"</span>;</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">this</span>.leadership = <span class="code-string">"Team-Centric"</span>;</div>
+                    <div class="code-line">&nbsp;&nbsp;}</div>
+                    <div class="code-line"></div>
+                    <div class="code-line">&nbsp;&nbsp;<span class="code-function">deliverProject</span>(requirements) {</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> {</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;code: <span class="code-string">"Clean & Tested"</span>,</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;documentation: <span class="code-string">"Comprehensive"</span>,</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deployment: <span class="code-string">"CI/CD Automated"</span>,</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maintenance: <span class="code-string">"Long-term Supported"</span></div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;};</div>
+                    <div class="code-line">&nbsp;&nbsp;}</div>
+                    <div class="code-line">}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Technical Arsenal</h2>
+                <p class="section-subtitle">Mastery across the full development stack with focus on scalability and performance</p>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category animate-on-scroll">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="skill-title">Mobile Development</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Cross-platform & Native</p>
+                        </div>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <span class="skill-name">Flutter/Dart</span>
+                            <span class="skill-level">Expert</span>
+                        </li>
+                        <div class="skill-bar"><div class="skill-progress" data-width="95"></div></div>
+                        
+                        <li class="skill-item">
+                            <span class="skill-name">Kotlin/Android</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                        <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                        
+                        <li class="skill-item">
+                            <span class="skill-name">Java</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                        <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+                    </ul>
+                </div>
+                
+                <div class="skill-category animate-on-scroll">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div>
+                            <h3 class="skill-title">Backend & APIs</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Microservices & Integration</p>
+                        </div>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <span class="skill-name">Node.js</span>
+                            <span class="skill-level">Expert</span>
+                        </li>
+                        <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+                        
+                        <li class="skill-item">
+                            <span class="skill-name">Spring Boot</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                        <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                        
+                        <li class="skill-item">
+                            <span class="skill-name">REST/GraphQL</span>
+                            <span class="skill-level">Expert</span>
+                        </li>
+                        <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+                    </ul>
+                </div>
+                
+                <div class="skill-category animate-on-scroll">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <div>
+                            <h3 class="skill-title">Cloud & DevOps</h3>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Infrastructure & Automation</p>
+                        </div>
+                    </div>
+                    <ul class="skill-list">
+                        <li class="skill-item">
+                            <span class="skill-name">AWS</span>
+                            <span class="skill-level">Advanced</span>
+                        </li>
+                        <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+                        
+                        <li class="skill-item">
+                            <span class="skill-name">Docker</span>
+                            <span class="skill-level">Expert</span>
+                        </li>
+                        <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+                        
+                        <li class="skill-item">
+                            <span class="skill-name">CI/CD</span>
+                            <span class="skill-level">Expert</span>
+                        </li>
+                        <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Leadership Journey</h2>
+                <p class="section-subtitle">Progressive career path from developer to engineering leadership</p>
+            </div>
+            
+            <div class="experience-timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-period">
+                            <i class="far fa-calendar"></i>
+                            April 2024 – Present
+                        </div>
+                        <h3 class="timeline-company">Jaguar Petroleum</h3>
+                        <div class="timeline-role">Engineering Lead</div>
+                        <p class="timeline-description">
+                            Leading engineering initiatives across six countries. Architecting real-time platforms, 
+                            overseeing ERP migrations, and building IoT monitoring systems. Managing cross-functional 
+                            teams to deliver scalable solutions for energy distribution and mobility services.
+                        </p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Spring Boot</span>
+                            <span class="tech-tag">ERPNext</span>
+                            <span class="tech-tag">IoT</span>
+                            <span class="tech-tag">AWS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-period">
+                            <i class="far fa-calendar"></i>
+                            April 2022 – April 2024
+                        </div>
+                        <h3 class="timeline-company">ICEA LION Group</h3>
+                        <div class="timeline-role">Full Stack Developer</div>
+                        <p class="timeline-description">
+                            Developed enterprise-grade insurance applications serving thousands of users. 
+                            Built mobile and web platforms for agent onboarding and client self-service. 
+                            Implemented CI/CD pipelines and containerized deployments across multiple countries.
+                        </p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Flutter</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Azure DevOps</span>
+                            <span class="tech-tag">Angular</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-period">
+                            <i class="far fa-calendar"></i>
+                            July 2021 – April 2022
+                        </div>
+                        <h3 class="timeline-company">Upande Limited</h3>
+                        <div class="timeline-role">Head of Technology</div>
+                        <p class="timeline-description">
+                            Led technology strategy and software development operations. Managed teams building 
+                            GIS-based disaster management systems and ERP integrations. Established development 
+                            standards and mentored junior engineers.
+                        </p>
+                        <div class="timeline-tech">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">PostGIS</span>
+                            <span class="tech-tag">ERPNext</span>
+                            <span class="tech-tag">Team Leadership</span>
+                            <span class="tech-tag">System Architecture</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Enterprise Projects</h2>
+                <p class="section-subtitle">Scalable solutions delivered for industry leaders</p>
+            </div>
+            
+            <div class="projects-grid">
+                <!-- JGas App -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-header">
+                        <h3 class="project-title">
+                            <i class="fas fa-gas-pump project-icon"></i>
+                            JGas Platform
+                        </h3>
+                        <p class="project-description">
+                            Enterprise LPG ordering, delivery tracking, and payment platform with IoT integration, 
+                            Salesforce connectivity, and ERP synchronization. Serves thousands of customers with 
+                            real-time tracking capabilities.
+                        </p>
+                        <div class="project-tech">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Spring Boot</span>
+                            <span class="project-tag">IoT</span>
+                            <span class="project-tag">Salesforce</span>
+                            <span class="project-tag">ERPNext</span>
+                        </div>
+                    </div>
+                   <div class="project-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.jaguar.petroleum.jgas&hl=en" class="project-link" target="_blank">
+                            <i class="fab fa-google-play"></i>
+                            <span>Play Store</span>
+                        </a>
+                        <a href="https://apps.apple.com/ke/app/nia-app/id6748849667" class="project-link" target="_blank">
+                            <i class="fab fa-app-store-ios"></i>
+                            <span>App Store</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- ICEA Agents App -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-header">
+                        <h3 class="project-title">
+                            <i class="fas fa-user-tie project-icon"></i>
+                            ICEA Agents App
+                        </h3>
+                        <p class="project-description">
+                            Cross-platform mobile application for insurance agent onboarding, policy management, 
+                            and client servicing. Integrated with backend policy systems and CRM modules. Used by 
+                            thousands of agents across multiple countries.
+                        </p>
+                        <div class="project-tech">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">REST APIs</span>
+                            <span class="project-tag">Firebase</span>
+                            <span class="project-tag">CI/CD</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.icealion.agents.app&hl=en" class="project-link" target="_blank">
+                            <i class="fab fa-google-play"></i>
+                            <span>Play Store</span>
+                        </a>
+                        <a href="https://apps.apple.com/ke/app/icea-lion/id1458700473" class="project-link" target="_blank">
+                            <i class="fab fa-app-store-ios"></i>
+                            <span>App Store</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- ICEA Customers App -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-header">
+                        <h3 class="project-title">
+                            <i class="fas fa-users project-icon"></i>
+                            ICEA Customers App
+                        </h3>
+                        <p class="project-description">
+                            Client-facing mobile application for policyholders, providing digital access to insurance 
+                            products, claims tracking, and secure document management. Features biometric authentication 
+                            and real-time notifications.
+                        </p>
+                        <div class="project-tech">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Spring Boot</span>
+                            <span class="project-tag">Biometrics</span>
+                            <span class="project-tag">Push Notifications</span>
+                            <span class="project-tag">Secure API</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.icealion.clientsapp&hl=en" class="project-link" target="_blank">
+                            <i class="fab fa-google-play"></i>
+                            <span>Play Store</span>
+                        </a>
+                        <a href="https://apps.apple.com/ke/app/icea-lion-client-app/id6737226892" class="project-link" target="_blank">
+                            <i class="fab fa-app-store-ios"></i>
+                            <span>App Store</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- JMobility -->
+                <div class="project-card animate-on-scroll">
+                    <div class="project-header">
+                        <h3 class="project-title">
+                            <i class="fas fa-car project-icon"></i>
+                            JMobility
+                        </h3>
+                        <p class="project-description">
+                            Real-time ride-hailing platform with trip dispatch and live tracking capabilities. 
+                            Built with WebSockets for real-time communication, featuring driver management, 
+                            fare calculation, and payment integration.
+                        </p>
+                        <div class="project-tech">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Spring Boot</span>
+                            <span class="project-tag">WebSockets</span>
+                            <span class="project-tag">PostgreSQL</span>
+                            <span class="project-tag">Redis</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://mobility-dashboard.jaguar-petroleum.co.ke/" class="project-link">
+                            <i class="fas fa-external-link-alt"></i>
+                            <span>Live Demo</span>
+                        </a>
+                        <a href="#" class="project-link">
+                            <i class="fab fa-github"></i>
+                            <span>Architecture</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Let's Connect</h2>
+                <p class="section-subtitle">Open to senior software developer/engineer opportunities, particularly those involving complex technical challenges.</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item animate-on-scroll">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p>+254 701 250 543</p>
+                            <p>+254 795 019 084</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item animate-on-scroll">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p>kiragugathua@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item animate-on-scroll">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Location</h3>
+                            <p>Nairobi, Kenya</p>
+                            <p>Open to remote opportunities</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/kiragu-gathua-138b97122/" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/GathuaKiragu" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://twitter.com/Gathua_Kiragu" class="social-link" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://medium.com/@briangathua" class="social-link" target="_blank">
+                            <i class="fab fa-medium"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="code-window animate-on-scroll">
+                    <div class="code-line"><span class="code-comment">// Ready for your next engineering challenge</span></div>
+                    <div class="code-line"><span class="code-keyword">const</span> <span class="code-function">nextOpportunity</span> = {</div>
+                    <div class="code-line">&nbsp;&nbsp;role: <span class="code-string">"Engineering Leadership"</span>,</div>
+                    <div class="code-line">&nbsp;&nbsp;challenge: <span class="code-string">"Complex System Architecture"</span>,</div>
+                    <div class="code-line">&nbsp;&nbsp;scale: <span class="code-string">"Enterprise-level"</span>,</div>
+                    <div class="code-line">&nbsp;&nbsp;impact: <span class="code-string">"Business Transformation"</span></div>
+                    <div class="code-line">};</div>
+                    <div class="code-line"></div>
+                    <div class="code-line"><span class="code-comment">// Let's build something remarkable</span></div>
+                    <div class="code-line"><span class="code-function">connect</span>(<span class="code-string">"brian@gathua"</span>).then(response => {</div>
+                    <div class="code-line">&nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-string">"Architecture discussions • Team leadership • Scalable solutions"</span>;</div>
+                    <div class="code-line">});</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">BGATHUA</div>
+                <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    Engineering lead specializing in digital transformation, scalable architecture, 
+                    and team leadership. Transforming business challenges into elegant technical solutions.
+                </p>
+                
+                <div class="social-links" style="justify-content: center; margin-top: 30px;">
+                    <a href="https://linkedin.com/in/kiragu-gathua-138b97122/" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/GathuaKiragu" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com/Gathua_Kiragu" class="social-link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="mailto:kiragugathua@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <p class="footer-copyright">
+                    © 2024 Brian Gathua Kiragu. All systems operational.
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Matrix Rain Effect
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        
+        const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789$+-*/=%"#&_()[]{}<>;:,.?!|\\';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        
+        const drops = [];
+        for (let i = 0; i < columns; i++) {
+            drops[i] = 1;
+        }
+        
+        function drawMatrix() {
+            ctx.fillStyle = 'rgba(10, 14, 20, 0.04)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#00ff41';
+            ctx.font = `${fontSize}px 'Fira Code'`;
+            
+            for (let i = 0; i < drops.length; i++) {
+                const text = letters[Math.floor(Math.random() * letters.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+                
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                    drops[i] = 0;
+                }
+                drops[i]++;
+            }
+        }
+        
+        // Skill Bar Animations
+        function animateSkillBars() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const width = bar.getAttribute('data-width');
+                bar.style.width = width + '%';
+            });
+        }
+        
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Animate skill bars when skills section is visible
+                    if (entry.target.id === 'skills' || entry.target.classList.contains('skill-category')) {
+                        animateSkillBars();
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        // Observe all animate-on-scroll elements
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Update active nav link
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Matrix animation loop
+        function animateMatrix() {
+            drawMatrix();
+            requestAnimationFrame(animateMatrix);
+        }
+        
+        // Resize handler
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+        
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Start matrix animation
+            animateMatrix();
+            
+            // Trigger initial animations
+            setTimeout(() => {
+                document.querySelector('.hero-content').classList.add('visible');
+            }, 300);
+        });
+        
+        // Terminal typing effect in hero
+        const terminalLines = document.querySelectorAll('.terminal-line');
+        let lineIndex = 0;
+        
+        function typeTerminalLine() {
+            if (lineIndex < terminalLines.length) {
+                const line = terminalLines[lineIndex];
+                const text = line.querySelector('.terminal-command') || line.querySelector('.terminal-output');
+                
+                if (text && !line.classList.contains('typed')) {
+                    const originalText = text.textContent;
+                    text.textContent = '';
+                    line.classList.add('typing');
+                    
+                    let charIndex = 0;
+                    function typeChar() {
+                        if (charIndex < originalText.length) {
+                            text.textContent += originalText.charAt(charIndex);
+                            charIndex++;
+                            setTimeout(typeChar, 30);
+                        } else {
+                            line.classList.remove('typing');
+                            line.classList.add('typed');
+                            lineIndex++;
+                            setTimeout(typeTerminalLine, 500);
+                        }
+                    }
+                    typeChar();
+                } else {
+                    lineIndex++;
+                    setTimeout(typeTerminalLine, 200);
+                }
+            }
+        }
+        
+        // Start terminal typing after page load
+        setTimeout(typeTerminalLine, 1500);
+    </script>
 </body>
-
 </html>
