@@ -42,13 +42,22 @@ h2 { font-size: clamp(26px, 3vw, 34px); line-height: 1.2; letter-spacing: -1px; 
 h3 { font-size: 25px; line-height: 1.3; letter-spacing: -.5px; }
 .eyebrow { font-size: 14px; color: var(--accent); margin-bottom: 14px; }
 .hero { padding-top: 64px; }
-.hero-introduction { display: grid; grid-template-columns: minmax(0, 1fr) 240px; align-items: center; gap: 66px; }
+.hero-introduction { display: grid; grid-template-columns: minmax(0, 1fr) 260px; align-items: center; gap: 64px; }
 .hero-copy { min-width: 0; }
 .hero-copy > .eyebrow { font-size: 14px; color: var(--muted); margin-bottom: 14px; }
 .hero-role { color: var(--text); font-size: 20px; margin: 18px 0; }
 .intro { color: var(--muted); font-size: 17px; max-width: 650px; }
-.portrait { margin: 0; align-self: center; }
-.portrait img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 3; border-radius: 6px; }
+.portrait { margin: 0; align-self: center; width: 100%; }
+.portrait img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center 24%;
+    border-radius: 50%;
+    border: 5px solid var(--surface);
+}
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 26px; }
 .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; border: 1px solid #596676; border-radius: 4px; text-decoration: none; padding: 9px 18px; font-size: 14px; }
 .primary { background: var(--accent); border-color: var(--accent); color: #142334; font-weight: 600; }
@@ -146,8 +155,8 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding-block
     h1 { font-size: 38px; }
     .intro { font-size: 16px; }
     .hero-role { font-size: 18px; }
-    .portrait { align-self: flex-start; margin: 0 0 4px; width: 140px; }
-    .portrait img { width: 100%; height: auto; border-radius: 6px; }
+    .portrait { order: -1; align-self: flex-start; margin: 0; width: 128px; }
+    .portrait img { border-width: 3px; }
     .evidence { flex-wrap: wrap; gap: 20px; margin-top: 28px; }
     .evidence > div { flex: 0 0 calc(50% - 10px); padding: 0; }
     .evidence strong { font-size: 23px; }
@@ -183,3 +192,12 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding-block
 .agency-link { display: inline-block; font-size: 14px; padding-block: 6px; }
 @media (max-width: 800px) { .agency { gap: 30px; } }
 @media (max-width: 560px) { .agency { grid-template-columns: minmax(0, 1fr); gap: 20px; } }
+
+/* Keep secondary work and technology context out of the main project flow. */
+.more-projects { margin-top: 28px; }
+.more-projects > summary { padding-block: 16px; color: var(--muted); }
+.additional-projects { margin-top: 24px; }
+.skills-grid { column-gap: 40px; }
+.skills-grid article { padding-block: 18px; }
+.skills-grid h3 { margin-bottom: 6px; }
+.skills-grid p { margin-bottom: 0; }

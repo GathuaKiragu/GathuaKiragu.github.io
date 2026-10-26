@@ -78,8 +78,8 @@
        <a class="button primary" href="#projects">
         View projects
        </a>
-       <a class="button" download="Brian_Gathua_CV.docx" href="assets/Brian_Gathua_CV.docx">
-        Download CV
+       <a class="button" download="Brian_Gathua_CV.pdf" href="assets/Brian_Gathua_CV.pdf">
+        Download CV (PDF)
        </a>
        <a class="text-link" href="mailto:kiragugathua@gmail.com">
         kiragugathua@gmail.com
@@ -115,17 +115,9 @@
        BLE sensors in a pilot
       </span>
      </div>
-     <div>
-      <strong>
-       500+
-      </strong>
-      <span>
-       Reported JGas users
-      </span>
-     </div>
     </div>
     <p class="footnote">
-     JGas user count is reported; the measurement period is still to be confirmed. The sensor work was a pilot.
+     Sensor count refers to the BLE pilot; performance improvement has not yet been measured.
     </p>
    </section>
    <section class="container section" id="projects">
@@ -347,151 +339,158 @@
        </a>
       </div>
      </article>
-     <article class="project supporting-project" id="iot">
-      <div aria-label="Project focus" class="project-stat">
-       <span class="eyebrow">
-        PILOT SCALE
-       </span>
-       <strong>
-        1,000
-        <span>
-         BLE sensors
-        </span>
-       </strong>
-       <p>
-        Redis caching / MySQL write management
-       </p>
-      </div>
-      <div class="project-content">
-       <p class="eyebrow">
-        Device data
-       </p>
-       <h3>
-        IoT monitoring
-       </h3>
-       <p class="outcome">
-        1,000 BLE sensors in a pilot
-       </p>
-       <p>
-        I investigated MySQL load and reworked sensor data handling with Redis caching and less frequent persisted updates.
-       </p>
-       <p class="technologies">
-        Redis · MySQL · BLE · IoT data pipelines
-       </p>
-       <details>
-        <summary>
-         <span class="view-label">
-          View case study
-         </span>
-         <span class="hide-label">
-          Close case study
-         </span>
-         <span aria-hidden="true">
-          +
-         </span>
-        </summary>
-        <div class="case-study">
-         <h4>
-          The problem
-         </h4>
-         <p>
-          High-frequency sensor updates created elevated MySQL workload during a 1,000-sensor BLE pilot.
-         </p>
-         <h4>
-          My contribution
-         </h4>
-         <p>
-          I investigated the database load, introduced Redis caching, and reduced how frequently sensor updates were persisted.
-         </p>
-         <h4>
-          Technical challenge
-         </h4>
-         <p>
-          The data pipeline needed to manage database writes while handling frequent readings from the pilot devices.
-         </p>
-         <h4>
-          Outcome
-         </h4>
-         <p>
-          The data handling approach was reworked for the pilot. Performance improvement has not yet been measured; this is pilot scale, not a production rollout claim.
-         </p>
-        </div>
-       </details>
-      </div>
-     </article>
-     <article class="project supporting-project" id="jmobility">
-      <div aria-label="Project focus" class="project-stat">
-       <span class="eyebrow">
-        DELIVERY OPERATIONS
-       </span>
-       <strong>
-        Dispatch
-        <span>
-         → Delivery
-        </span>
-       </strong>
-       <p>
-        Mobile workflows / Backend services
-       </p>
-      </div>
-      <div class="project-content">
-       <p class="eyebrow">
-        Last-mile delivery
-       </p>
-       <h3>
-        JMobility
-       </h3>
-       <p class="outcome">
-        Dispatch and delivery workflows
-       </p>
-       <p>
-        I delivered Flutter and backend capabilities for fleet and mobility operations supporting last-mile delivery.
-       </p>
-       <p class="technologies">
-        Flutter · Backend services · Fleet workflows
-       </p>
-       <details>
-        <summary>
-         <span class="view-label">
-          View case study
-         </span>
-         <span class="hide-label">
-          Close case study
-         </span>
-         <span aria-hidden="true">
-          +
-         </span>
-        </summary>
-        <div class="case-study">
-         <h4>
-          The problem
-         </h4>
-         <p>
-          Last-mile delivery teams need connected fleet, dispatch, and delivery workflows.
-         </p>
-         <h4>
-          My contribution
-         </h4>
-         <p>
-          I designed and delivered Flutter and backend capabilities for fleet and mobility workflows, integrating operational services.
-         </p>
-         <h4>
-          Technical challenge
-         </h4>
-         <p>
-          Delivery workflows need to connect mobile activity with backend operational services.
-         </p>
-         <h4>
-          Outcome
-         </h4>
-         <p>
-          Delivered mobile and backend capabilities for fleet operations. Order volume is awaiting confirmation.
-         </p>
-        </div>
-       </details>
-      </div>
-     </article>
     </div>
+    <details class="more-projects">
+     <summary>
+      More technical work: IoT monitoring &amp; delivery systems
+     </summary>
+     <div class="projects additional-projects">
+      <article class="project supporting-project" id="iot">
+       <div aria-label="Project focus" class="project-stat">
+        <span class="eyebrow">
+         PILOT SCALE
+        </span>
+        <strong>
+         1,000
+         <span>
+          BLE sensors
+         </span>
+        </strong>
+        <p>
+         Redis caching / MySQL write management
+        </p>
+       </div>
+       <div class="project-content">
+        <p class="eyebrow">
+         Device data
+        </p>
+        <h3>
+         IoT monitoring
+        </h3>
+        <p class="outcome">
+         1,000 BLE sensors in a pilot
+        </p>
+        <p>
+         I investigated MySQL load and reworked sensor data handling with Redis caching and less frequent persisted updates.
+        </p>
+        <p class="technologies">
+         Redis · MySQL · BLE · IoT data pipelines
+        </p>
+        <details>
+         <summary>
+          <span class="view-label">
+           View case study
+          </span>
+          <span class="hide-label">
+           Close case study
+          </span>
+          <span aria-hidden="true">
+           +
+          </span>
+         </summary>
+         <div class="case-study">
+          <h4>
+           The problem
+          </h4>
+          <p>
+           High-frequency sensor updates created elevated MySQL workload during a 1,000-sensor BLE pilot.
+          </p>
+          <h4>
+           My contribution
+          </h4>
+          <p>
+           I investigated the database load, introduced Redis caching, and reduced how frequently sensor updates were persisted.
+          </p>
+          <h4>
+           Technical challenge
+          </h4>
+          <p>
+           The data pipeline needed to manage database writes while handling frequent readings from the pilot devices.
+          </p>
+          <h4>
+           Outcome
+          </h4>
+          <p>
+           The data handling approach was reworked for the pilot. Performance improvement has not yet been measured; this is pilot scale, not a production rollout claim.
+          </p>
+         </div>
+        </details>
+       </div>
+      </article>
+      <article class="project supporting-project" id="jmobility">
+       <div aria-label="Project focus" class="project-stat">
+        <span class="eyebrow">
+         DELIVERY OPERATIONS
+        </span>
+        <strong>
+         Dispatch
+         <span>
+          → Delivery
+         </span>
+        </strong>
+        <p>
+         Mobile workflows / Backend services
+        </p>
+       </div>
+       <div class="project-content">
+        <p class="eyebrow">
+         Last-mile delivery
+        </p>
+        <h3>
+         JMobility
+        </h3>
+        <p class="outcome">
+         Dispatch and delivery workflows
+        </p>
+        <p>
+         I delivered Flutter and backend capabilities for fleet and mobility operations supporting last-mile delivery.
+        </p>
+        <p class="technologies">
+         Flutter · Backend services · Fleet workflows
+        </p>
+        <details>
+         <summary>
+          <span class="view-label">
+           View case study
+          </span>
+          <span class="hide-label">
+           Close case study
+          </span>
+          <span aria-hidden="true">
+           +
+          </span>
+         </summary>
+         <div class="case-study">
+          <h4>
+           The problem
+          </h4>
+          <p>
+           Last-mile delivery teams need connected fleet, dispatch, and delivery workflows.
+          </p>
+          <h4>
+           My contribution
+          </h4>
+          <p>
+           I designed and delivered Flutter and backend capabilities for fleet and mobility workflows, integrating operational services.
+          </p>
+          <h4>
+           Technical challenge
+          </h4>
+          <p>
+           Delivery workflows need to connect mobile activity with backend operational services.
+          </p>
+          <h4>
+           Outcome
+          </h4>
+          <p>
+           Delivered mobile and backend capabilities for fleet operations. Order volume is awaiting confirmation.
+          </p>
+         </div>
+        </details>
+       </div>
+      </article>
+     </div>
+    </details>
    </section>
    <section class="container section" id="about">
     <div class="section-heading">
@@ -511,6 +510,9 @@
       </p>
       <p>
        I have mentored and trained 20+ developers. I also contribute to technical interviews and work with nontechnical stakeholders to turn operational needs into software workflows.
+      </p>
+      <p>
+       My training includes a Diploma in Information Technology from JKUAT and a Software Engineering Certificate from Moringa School.
       </p>
      </div>
     </div>
@@ -556,9 +558,6 @@
       <p>
        Delivered mobile capabilities for JGas, fleet workflows, and ICEA customer and agent applications.
       </p>
-      <a href="#jgas">
-       See JGas case study
-      </a>
      </article>
      <article>
       <h3>
@@ -567,9 +566,6 @@
       <p>
        Built backend capabilities for LPG and fleet operations; implemented REST integrations for ICEA insurance workflows.
       </p>
-      <a href="#agents">
-       See insurance work
-      </a>
      </article>
      <article>
       <h3>
@@ -578,9 +574,6 @@
       <p>
        Introduced caching and reduced persisted sensor update frequency to address database load in a BLE sensor pilot.
       </p>
-      <a href="#iot">
-       See IoT case study
-      </a>
      </article>
      <article>
       <h3>
@@ -589,9 +582,6 @@
       <p>
        Designed cylinder lifecycle workflows across four depots and contributed to the NetSuite to ERPNext migration.
       </p>
-      <a href="#jgas">
-       See cylinder tracking
-      </a>
      </article>
      <article>
       <h3>
@@ -600,9 +590,6 @@
       <p>
        Lead Git-based delivery workflows, architecture discussions, code reviews, and technical mentoring for a five-person team.
       </p>
-      <a href="#experience">
-       See experience
-      </a>
      </article>
     </div>
    </section>
@@ -631,7 +618,7 @@
      </article>
      <article>
       <p class="eyebrow">
-       PREVIOUS EXPERIENCE
+       April 2022 – April 2025
       </p>
       <h3>
        ICEA LION Group
@@ -645,7 +632,7 @@
      </article>
      <article>
       <p class="eyebrow">
-       EARLIER EXPERIENCE
+       2017 – April 2022
       </p>
       <h3>
        Upande Limited
@@ -654,7 +641,7 @@
        Technology leadership &amp; Android development
       </p>
       <p>
-       Contributed to technology delivery for environmental monitoring and related software, with responsibilities across Android development and technology leadership.
+       Joined as an intern and progressed into Android development and technology leadership. Contributed to environmental monitoring software and related digital solutions.
       </p>
      </article>
     </div>
